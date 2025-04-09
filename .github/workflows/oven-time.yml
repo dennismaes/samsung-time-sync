@@ -1,0 +1,18 @@
+name: Set Oven Time
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          chmod +x set_oven_time.sh
+          ./set_oven_time.sh
+        env:
+          TOKEN: ${{ secrets.SMART_THINGS_TOKEN }}
+          DEVICE_ID: ${{ secrets.OVEN_DEVICE_ID }}
