@@ -15,4 +15,4 @@ jobs:
           ./set_oven_time.sh
         env:
           TOKEN: ${{ secrets.SMART_THINGS_TOKEN }}
-          DEVICE_ID: ${{ secrets.OVEN_DEVICE_ID }}
+          DEVICE_ID: ${{ vars.OVEN_DEVICE_ID }}
