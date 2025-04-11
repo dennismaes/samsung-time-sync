@@ -10,11 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-  run-script:
-    runs-on: ubuntu-latest
-    needs: checkout
-    steps:
       - run: |
+          export TOKEN=${{ secrets.SMART_THINGS_TOKEN }}
+          export DEVICE_ID=${{ vars.OVEN_DEVICE_ID }}
           chmod +x set_oven_time.sh
           ./set_oven_time.sh
         env:
