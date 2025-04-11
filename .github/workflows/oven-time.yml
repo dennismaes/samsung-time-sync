@@ -8,13 +8,11 @@ on:
 jobs:
   checkout:
     runs-on: ubuntu-latest
+    env:
+      TOKEN: ${{ secrets.SMART_THINGS_TOKEN }}
+      DEVICE_ID: ${{ vars.OVEN_DEVICE_ID }}
     steps:
       - uses: actions/checkout@v4
       - run: |
-          export TOKEN=${{ secrets.SMART_THINGS_TOKEN }}
-          export DEVICE_ID=${{ vars.OVEN_DEVICE_ID }}
           chmod +x set_oven_time.sh
           ./set_oven_time.sh
-        env:
-          TOKEN: ${{ secrets.SMART_THINGS_TOKEN }}
-          DEVICE_ID: ${{ vars.OVEN_DEVICE_ID }}
