@@ -25,6 +25,8 @@ EOF
 echo "Setting oven time to: $CURRENT_TIME (Europe/Brussels)"
 
 echo "Sending request to SmartThings API..."
+echo DEVICE_ID: $DEVICE_ID
+echo TOKEN: $TOKEN
 RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.smartthings.com/v1/devices/$DEVICE_ID/commands" \
      -H "Authorization: Bearer $TOKEN" \
      -H "Content-Type: application/json" \
