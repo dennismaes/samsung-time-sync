@@ -1,0 +1,3 @@
+# Keep Windows line endings byte-exact, also for raw/ZIP downloads
+*.ps1 -text
+*.cmd -text
