@@ -100,3 +100,7 @@ powershell -ExecutionPolicy Bypass -File .\oven_sync.ps1 -Uninstall  # remove th
 The old bash + GitHub Actions version (using a Personal Access Token, which
 no longer works since tokens expire after 24 hours) is kept on the
 [`legacy-github-actions`](../../tree/legacy-github-actions) branch.
+
+## License
+
+[MIT](LICENSE)
